@@ -2,11 +2,45 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
 
 public class Body : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, Tooltip("list of organs inside body by their game object")]
     private List<GameObject> organsInsideMeList;
+
+    [SerializeField, Tooltip("the TMP object that will contain count of organs in body")]
+    private TMP_Text organCountText;
+
+    [SerializeField, Tooltip("Text to load before number of organs in body")]
+    private string frontText;
+
+    //deserialized constant used for tracking value of organs in the body
+    private int _organCount = 0;
+
+    //public interface of organ count, changes count text when updated
+    [Tooltip("number of organs in body")]
+    public int organCount
+    {
+        //define action for setting 
+        set
+        {
+            _organCount = value;
+            if(organCountText != null)
+            {
+                organCountText.text = frontText + _organCount;
+            }
+        }
+        get
+        { 
+            return _organCount; 
+        }
+    }
+
+    private void Start()
+    {
+        organCount = 0;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +49,9 @@ public class Body : MonoBehaviour
         {
             //print("hello choom");
             organsInsideMeList.Add(collision.gameObject);
+            organCount++;
         }
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -31,6 +67,7 @@ public class Body : MonoBehaviour
             {
                 //remove the organ that was found at that index
                 organsInsideMeList.RemoveAt(index);
+                organCount--;
             }
             else
             {
