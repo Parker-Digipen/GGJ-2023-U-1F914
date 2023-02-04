@@ -49,25 +49,35 @@ public class Traits : MonoBehaviour
     public Funk myFunk = Funk.None;
     public Material myMaterial = Material.None;
 
+    [Tooltip("Overall quality, this is not generated and must be assigned")]
     public int quality;
     //squish
+    [Tooltip("How squishy the organ is")]
     public int squish;
     //Cuteness
+    [Tooltip("How cute the organ is")]
     public int cuteness;
     //text desctiption of object
-    [TextArea(5, 5)]
+    [TextArea(5, 5), Tooltip("Description item will have when hovered over")]
     public string desctiption;
 
-    //name              //squish
-    //type              //funk
-    //desc/flavor text  //cuteness
+    //format text box will appear in as seen is ascii art
+    /*
+    --------------------------------------
+    |Name     *******  Squish   *********|
+    |Type     *******  Funk     *********|
+    |Material *******  Cuteness *********|
+    |desc:                               |
+    | Acordint to all known laws of      |
+    | aviation a bee.                    |
+    --------------------------------------
+    */
 
-    //[SerializeField]
 
-
-    // Start is called before the first frame update
-    void Start()
+    //Calls when program starts
+    void Awake()
     {
+        //warns if no trait is selected for enums
         if(myOrgan == OrganType.None)
         {
             print(this.name + " has no Organ Type");
@@ -80,11 +90,5 @@ public class Traits : MonoBehaviour
         {
             print(this.name + " has no Material Type");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
