@@ -77,6 +77,7 @@ public class Traits : MonoBehaviour
     //Calls when program starts
     void Awake()
     {
+
         //warns if no trait is selected for enums
         if(myOrgan == OrganType.None)
         {
