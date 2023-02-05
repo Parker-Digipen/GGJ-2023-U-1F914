@@ -1,0 +1,40 @@
+500
+Sal
+2
+Kidney	-3
+Lung	-3
+Heart	-0
+Stomach	-1
+Liver	-2
+Brain	-3
+
+None	-1
+Suburban-3
+Groovy	-3
+Smelly	-1
+Sweaty	-1
+Greasy	-2
+Moldy	-1
+Sick	-1
+Wet	-3
+
+Metal	-2
+Glass	-1
+Paper	-1
+Wood	-1
+Flesh	-3
+Stone	-2
+Ceramic	-2
+Burlap	-3
+Velvet	-3
+Denim	-3
+Cotton	-2
+Slime	-1
+Ice	-1
+
+5,10
+1,5
+5
+Just make me something good
+Guess this'll do
+...

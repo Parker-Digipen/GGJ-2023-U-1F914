@@ -1,0 +1,40 @@
+1000
+Beezlebub
+4
+Kidney	-2
+Lung	-1
+Heart	-3
+Stomach	-3
+Liver	-0
+Brain	-1
+
+None	-1
+Suburban-3
+Groovy	-3
+Smelly	-0
+Sweaty	-1
+Greasy	-1
+Moldy	-2
+Sick	-3
+Wet	-3
+
+Metal	-1
+Glass	-2
+Paper	-2
+Wood	-1
+Flesh	-3
+Stone	-2
+Ceramic	-1
+Burlap	-1
+Velvet	-2
+Denim	-3
+Cotton	-1
+Slime	-3
+Ice	-1
+
+5,10
+5,10
+5
+I require you to construct me a being capable of greatness
+Perfection
+Unbelievable

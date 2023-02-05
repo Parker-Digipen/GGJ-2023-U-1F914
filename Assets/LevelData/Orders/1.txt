@@ -1,0 +1,40 @@
+750
+Gertrude
+3
+Kidney	-0
+Lung	-1
+Heart	-3
+Stomach	-3
+Liver	-2
+Brain	-3
+
+None	-1
+Suburban -3
+Groovy	-1
+Smelly	-2
+Sweaty	-0
+Greasy	-1
+Moldy	-2
+Sick	-3
+Wet	-0
+
+Metal	-1
+Glass	-3
+Paper	-2
+Wood	-3
+Flesh	-0
+Stone	-3
+Ceramic	-3
+Burlap	-0
+Velvet	-0
+Denim	-1
+Cotton	-3
+Slime	-3
+Ice	-2
+
+4,10
+2,8
+5
+Hey bud, Im looking for something that might be above your pay grade. Think you can do it?
+Well, I guess I was wrong about you. Sorry
+Should've known not to spend my time here.

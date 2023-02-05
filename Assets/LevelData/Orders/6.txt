@@ -1,0 +1,40 @@
+750
+Penny
+3
+Kidney	-0
+Lung	-1
+Heart	-3
+Stomach	-2
+Liver	-3
+Brain	-3
+
+None	-0
+Suburban-1
+Groovy	-3
+Smelly	-3
+Sweaty	-2
+Greasy	-1
+Moldy	-3
+Sick	-2
+Wet	-1
+
+Metal	-3
+Glass	-3
+Paper	-2
+Wood	-1
+Flesh	-2
+Stone	-1
+Ceramic	-3
+Burlap	-1
+Velvet	-3
+Denim	-2
+Cotton	-0
+Slime	-1
+Ice	-1
+
+3,8
+2,5
+2
+?
+!
+...

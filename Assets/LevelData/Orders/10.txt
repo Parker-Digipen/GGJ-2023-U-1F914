@@ -1,0 +1,40 @@
+500
+Paul
+2
+Kidney	-1
+Lung	-2
+Heart	-3
+Stomach	-2
+Liver	-3
+Brain	-0
+
+None	-1
+Suburban-2
+Groovy	-3
+Smelly	-0
+Sweaty	-1
+Greasy	-2
+Moldy	-1
+Sick	-2
+Wet	-3
+
+Metal	-1
+Glass	-2
+Paper	-2
+Wood	-1
+Flesh	-3
+Stone	-2
+Ceramic	-1
+Burlap	-1
+Velvet	-2
+Denim	-3
+Cotton	-1
+Slime	-3
+Ice	-1
+
+5,10
+5,10
+5
+Hey, think you could make me a pretty little thing?
+Thanks bud
+Mmm thanks

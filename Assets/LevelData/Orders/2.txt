@@ -1,0 +1,40 @@
+1000
+Pepps
+3
+Kidney	-1
+Lung	-0
+Heart	-1
+Stomach	-2
+Liver	-3
+Brain	-3
+
+None	-0
+Suburban -3
+Groovy	-3
+Smelly	-2
+Sweaty	-0
+Greasy	-0
+Moldy	-1
+Sick	-1
+Wet	-3
+
+Metal	-3
+Glass	-2
+Paper	-0
+Wood	-3
+Flesh	-1
+Stone	-3
+Ceramic	-3
+Burlap	-3
+Velvet	-3
+Denim	-2
+Cotton	-1
+Slime	-0
+Ice	-0
+
+3,7
+2,10
+5
+Hey~ would you be able to make me a cutie?
+OMG they're perfect! Thanks love 
+Ew

@@ -1,0 +1,40 @@
+500
+Tommy
+2
+Kidney	-2
+Lung	-2
+Heart	-3
+Stomach	-3
+Liver	-0
+Brain	-1
+
+None	-1
+Suburban -3
+Groovy	-3
+Smelly	-1
+Sweaty	-1
+Greasy	-1
+Moldy	-2
+Sick	-2
+Wet	-3
+
+Metal	-3
+Glass	-1
+Paper	-1
+Wood	-2
+Flesh	-3
+Stone	-3
+Ceramic	-2
+Burlap	-1
+Velvet	-1
+Denim	-2
+Cotton	-1
+Slime	-3
+Ice	-3
+
+1,5
+1,5
+3
+Do you think you could make me a friend?
+OH WOW THEY'RE SO COOl. THANK YOU!
+Oh... thanks...

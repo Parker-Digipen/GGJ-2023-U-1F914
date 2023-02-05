@@ -1,0 +1,40 @@
+1000
+Sean
+4
+Kidney	-3
+Lung	-1
+Heart	-2
+Stomach	-0
+Liver	-3
+Brain	-2
+
+None	-1
+Suburban-3
+Groovy	-2
+Smelly	-3
+Sweaty	-2
+Greasy	-1
+Moldy	-1
+Sick	-2
+Wet	-3
+
+Metal	-2
+Glass	-2
+Paper	-1
+Wood	-1
+Flesh	-3
+Stone	-1
+Ceramic	-3
+Burlap	-3
+Velvet	-3
+Denim	-3
+Cotton	-2
+Slime	-1
+Ice	-1
+
+5,10
+1,5
+5
+Hey love, think you could whip up a handsome fella for little ol' me?
+Oh wow this is amazing! I knew you had it in you!
+Um well this isn't what I was looking for exactly 

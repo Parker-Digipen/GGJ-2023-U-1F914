@@ -1,0 +1,40 @@
+1000
+Jesse
+3
+Kidney	-2
+Lung	-2
+Heart	-3
+Stomach	-2
+Liver	-1
+Brain	-3
+
+None	-1
+Suburban-3
+Groovy	-3
+Smelly	-1
+Sweaty	-1
+Greasy	-2
+Moldy	-3
+Sick	-3
+Wet	-3
+
+Metal	-3
+Glass	-2
+Paper	-2
+Wood	-1
+Flesh	-3
+Stone	-1
+Ceramic	-2
+Burlap	-3
+Velvet	-1
+Denim	-3
+Cotton	-1
+Slime	-3
+Ice	-1
+
+1,8
+3,10
+4
+Think you could cook me up a helper?
+Aw man this is great, thanks!
+Ah... well you tried

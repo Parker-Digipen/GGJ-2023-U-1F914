@@ -37,6 +37,8 @@ public class Product : MonoBehaviour
     {
         if ((moeny.balance - price) >= 0)
         {
+            FindObjectOfType<Shop>().currentlyAvailable.Remove(this.gameObject);
+
             moeny.balance -= price;
             
             myRB.isKinematic = false;
