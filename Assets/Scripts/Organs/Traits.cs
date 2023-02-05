@@ -6,7 +6,6 @@ public class Traits : MonoBehaviour
 {
     public enum OrganType
     {
-        None,
         Kidney,
         Lung,
         Heart,
@@ -19,17 +18,15 @@ public class Traits : MonoBehaviour
         None,
         Suburban,
         Groovy,
-        Tropical,
         Smelly,
         Sweaty,
-        Greadsy,
+        Greasy,
         Moldy,
         Sick,
         Wet
     }
     public enum Material
     {
-        None,
         Metal,
         Glass,
         Paper,
@@ -45,9 +42,9 @@ public class Traits : MonoBehaviour
         Ice
     }
 
-    public OrganType myOrgan = OrganType.None;
+    public OrganType myOrgan = OrganType.Kidney;
     public Funk myFunk = Funk.None;
-    public Material myMaterial = Material.None;
+    public Material myMaterial = Material.Metal;
 
     [Tooltip("Overall quality, this is not generated and must be assigned")]
     public int quality;
@@ -73,23 +70,4 @@ public class Traits : MonoBehaviour
     --------------------------------------
     */
 
-
-    //Calls when program starts
-    void Awake()
-    {
-
-        //warns if no trait is selected for enums
-        if(myOrgan == OrganType.None)
-        {
-            print(this.name + " has no Organ Type");
-        }
-        if (myFunk == Funk.None)
-        {
-            print(this.name + " has no funk Type");
-        }
-        if (myMaterial == Material.None)
-        {
-            print(this.name + " has no Material Type");
-        }
-    }
 }

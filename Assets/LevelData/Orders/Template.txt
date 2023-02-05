@@ -1,0 +1,40 @@
+This line will nto be read, us it for comment and description
+<Name>
+<amount of organs>
+Kidney	-<1-3 pref>
+Lung	-<1-3 pref>
+Heart	-<1-3 pref>
+Stomach	-<1-3 pref>
+Liver	-<1-3 pref>
+Brain	-<1-3 pref>
+
+None	-<1-3 pref>
+Suburban-<1-3 pref>
+Groovy	-<1-3 pref>
+Smelly	-<1-3 pref>
+Sweaty	-<1-3 pref>
+Greasy	-<1-3 pref>
+Moldy	-<1-3 pref>
+Sick	-<1-3 pref>
+Wet		-<1-3 pref>
+
+Metal	-<1-3 pref>
+Glass	-<1-3 pref>
+Paper	-<1-3 pref>
+Wood	-<1-3 pref>
+Flesh	-<1-3 pref>
+Stone	-<1-3 pref>
+Ceramic	-<1-3 pref>
+Burlap	-<1-3 pref>
+Velvet	-<1-3 pref>
+Denim	-<1-3 pref>
+Cotton	-<1-3 pref>
+Slime	-<1-3 pref>
+Ice		-<1-3 pref>
+
+<minimum cuteness>,<maximum cuteness>
+<minimum squish>,<maximum squish>
+<taget quality 1-5>
+<Request Dialogue>
+<Win Dialogue>
+<Lose Dialogue>

@@ -7,7 +7,7 @@ using TMPro;
 public class Body : MonoBehaviour
 {
     [SerializeField, Tooltip("list of organs inside body by their game object")]
-    private List<GameObject> organsInsideMeList;
+    public List<GameObject> organsInsideMeList;
 
     [SerializeField, Tooltip("the TMP object that will contain count of organs in body")]
     private TMP_Text organCountText;

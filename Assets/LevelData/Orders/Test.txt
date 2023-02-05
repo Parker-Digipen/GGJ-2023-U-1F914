@@ -1,0 +1,40 @@
+Test object for scene
+Tammy
+3
+Kidney	-1
+Lung	-1
+Heart	-3
+Stomach	-2
+Liver	-2
+Brain	-3
+
+None	-1
+Suburban-2
+Groovy	-3
+Smelly	-1
+Sweaty	-1
+Greasy	-0
+Moldy	-0
+Sick	-0
+Wet		-3
+
+Metal	-2
+Glass	-3
+Paper	-1
+Wood	-3
+Flesh	-2
+Stone	-1
+Ceramic	-1
+Burlap	-0
+Velvet	-3
+Denim	-3
+Cotton	-2
+Slime	-1
+Ice		-1
+
+5,10
+1,7
+3
+Do you think you could cook up a stylish young man?
+why, he'll do just fine thank you
+oh, well at least you tried honey
