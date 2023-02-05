@@ -1,20 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
-    public int balance;
-
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private TMP_Text walletBox;
+    private int _balance;
+    public int balance
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        set
+        {
+            _balance = value;
+            if(walletBox)
+            {
+                walletBox.text = "" + _balance;
+            }
+        }
+        get
+        {
+            return _balance;
+        }
     }
 }

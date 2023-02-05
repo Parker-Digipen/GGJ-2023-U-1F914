@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.Windows;
@@ -57,10 +58,14 @@ public class OrderManager : MonoBehaviour
     private Body myBody;
 
     [SerializeField]
-    private TMP_Text nameDialogueBox;
+    private SimpleButton phone;
 
     [SerializeField]
-    private TMP_Text OrderDialogueBox;
+    private DialogueBox box;
+
+    [SerializeField]
+    private float lengthBeforeClosingDialogueBox;
+
 
     private Vector2 readCSV(string input)
     {
@@ -187,6 +192,11 @@ public class OrderManager : MonoBehaviour
 
         //tell gm that I have taken an order
         GameManager.orderNum++;
+
+        //populates text box
+        box.boxName = currentOrder.Customer;
+        box.boxDescription = currentOrder.OrderRequest;
+
     }
 
     private float evaluateOrder()
@@ -280,10 +290,38 @@ public class OrderManager : MonoBehaviour
         currentOrder.solution = myBody.organsInsideMeList;
         currentOrder.grade = evaluateOrder();
 
+        //GameManager.completedOrders.Add(currentOrder);
+
         //add money to wallet
         //print("payout: " + currentOrder.payout + "grade: " + currentOrder.grade + "balance: " + moneyBox.balance);
         moneyBox.balance += (int)(currentOrder.payout * currentOrder.grade);
 
+        for(int i = myBody.organCount - 1; i >= 0; --i)
+        {
+            Destroy(myBody.organsInsideMeList[i].gameObject);
+        }
+
+        box.boxDescription = currentOrder.OrderWin;
+        timer = lengthBeforeClosingDialogueBox;
+
+        Invoke("nextOrder", lengthBeforeClosingDialogueBox);
+    }
+
+    public void orderFail()
+    {
+        currentOrder.completed = false;
+        currentOrder.grade = -1;
+
+
+        for (int i = myBody.organCount - 1; i >= 0; --i)
+        {
+            Destroy(myBody.organsInsideMeList[i].gameObject);
+        }
+
+        box.boxDescription = currentOrder.OrderLose;
+        timer = lengthBeforeClosingDialogueBox;
+
+        Invoke("nextOrder", lengthBeforeClosingDialogueBox);
     }
 
 
@@ -297,15 +335,43 @@ public class OrderManager : MonoBehaviour
         {
             moneyBox = FindObjectOfType<Wallet>();
         }
+
         nextOrder();
     }
+
+    private float timer = 0;
+
 
     // Update is called once per frame
     void Update()
     {
-        if (UnityEngine.Input.anyKeyDown)
+        //handles text box pop up
+        if (phone.hover)
         {
-            orderComplete();
+            box.visible = true;
+            timer = lengthBeforeClosingDialogueBox;
+        }
+        else
+        {
+            box.visible = false;
+        }
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            box.visible = true;
+        }
+
+        //if button is pressed
+        if (phone.pressed && UnityEngine.Input.GetMouseButtonDown(0))
+        {
+            if(myBody.organCount > 0)
+            {
+                orderComplete();
+            }
+            else
+            {
+                orderFail();
+            }
         }
     }
 }
