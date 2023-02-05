@@ -84,4 +84,9 @@ public class Traits : MonoBehaviour
         desctiption = "By the gods, what is this?";
         //output.name = output.myMaterial.ToString() + " " + output.myOrgan.ToString();
     }
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this);
+    }
 }

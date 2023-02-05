@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Levels/StoreFront.unity
+    guid: f42e656697c57754bb5ad45be8678bd7
+  - enabled: 1
+    path: Assets/Scenes/Levels/Growery.unity
+    guid: 215f0238ac897504c99e48b47741ec0a
+  - enabled: 1
+    path: Assets/Scenes/Levels/MainMenu.unity
+    guid: 2a51e96fccbd9654ab092895bec23a88
   m_configObjects: {}

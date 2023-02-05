@@ -46,10 +46,12 @@ public class Wallet : MonoBehaviour
         }
         else
         {
+            /*
             for(int i = organs.Count; i >= 0; --i)
             {
                 Instantiate(organs[i], spawnPoint.position, transform.rotation);
             }
+            */
             Destroy(this);
         }
     }
