@@ -1,4 +1,4 @@
-Test object for scene
+1000
 Tammy
 3
 Kidney	-1

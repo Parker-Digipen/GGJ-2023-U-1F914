@@ -14,6 +14,7 @@ public class OrderManager : MonoBehaviour
     {
         public string Customer;
         public int organsNeeded;
+        public int payout;
         public int[] materialPref;  //scale 0-3 for preferance on material
 
         public int[] organPref;     //scale 0-3 for preferance on type of organ
@@ -33,8 +34,8 @@ public class OrderManager : MonoBehaviour
 
         //populated on completion
         public bool completed;
-        public bool satisfactory;
-        public List<Traits> solution;
+        public float grade;
+        public List<GameObject> solution;
 
     }
 
@@ -48,6 +49,9 @@ public class OrderManager : MonoBehaviour
 
     [SerializeField]
     private string orderFileType = ".txt";
+
+    [SerializeField]
+    private Wallet moneyBox;
 
     [SerializeField]
     private Body myBody;
@@ -110,8 +114,9 @@ public class OrderManager : MonoBehaviour
             //state machine for reading
             switch (lineBeingRead)
             {
-                //no op on first line just asterisk
+                //set max payout
                 case 0:
+                    output.payout = int.Parse(line);
                     break;
                 //next line is name
                 case 1:
@@ -175,7 +180,6 @@ public class OrderManager : MonoBehaviour
 
         //populate from file
         currentOrder = takeOrderFromFile(orderFolderPath + orderFileNames[tempRandIndexOfFile] + orderFileType);
-        print("cur set");
 
         //populate non file fields
         currentOrder.orderNumber = GameManager.orderNum;
@@ -195,27 +199,24 @@ public class OrderManager : MonoBehaviour
         //averages the quality of the organ relative to the order for each loop and element in list
         for(int i = myBody.organCount - 1; i >= 0; --i)
         {
-            print("i (organ cout) = " + i);
             Traits organBeingRead = myBody.organsInsideMeList[i].GetComponent<Traits>();
             
-            print("Material prefs len: " + currentOrder.materialPref[0]);
+            //print("Material prefs len: " + currentOrder.materialPref[0]);
             //evaluates value of material based on has code (where they are in the enum) of body parts material
             int materialValue = currentOrder.materialPref[organBeingRead.myMaterial.GetHashCode()];
-            print("Material prefs len: " + currentOrder.materialPref.Length + " code: " + organBeingRead.myMaterial.GetHashCode() + " val: " + materialValue);
+            //print("Material prefs len: " + currentOrder.materialPref.Length + " code: " + organBeingRead.myMaterial.GetHashCode() + " val: " + materialValue);
 
             //evaluates value of material based on has code (where they are in the enum) of body parts organ
             int organValue = currentOrder.organPref[organBeingRead.myOrgan.GetHashCode()];
-            print("organ prefs len: " + currentOrder.organPref.Length + " code: " + organBeingRead.myOrgan.GetHashCode() + " val: " + organValue);
+            //print("organ prefs len: " + currentOrder.organPref.Length + " code: " + organBeingRead.myOrgan.GetHashCode() + " val: " + organValue);
 
             //evaluates value of material based on has code (where they are in the enum) of body parts fnuk
             int funkValue = currentOrder.funkPref[organBeingRead.myFunk.GetHashCode()];
-            print("funk prefs len: " + currentOrder.funkPref.Length + " code: " + organBeingRead.myFunk.GetHashCode() + " val: " + funkValue);
+            //print("funk prefs len: " + currentOrder.funkPref.Length + " code: " + organBeingRead.myFunk.GetHashCode() + " val: " + funkValue);
 
-            print("b");
             //averages value of organ values
             netQuality += (materialValue + organValue + funkValue) / 9;
 
-            print("c");
             //if cuteness of organ being read is in the range of order
             if ((organBeingRead.cuteness >= currentOrder.cutenessRange.x) 
                 && (organBeingRead.cuteness <= currentOrder.cutenessRange.y))
@@ -237,7 +238,6 @@ public class OrderManager : MonoBehaviour
                 netQuality += (organBeingRead.squish - currentOrder.squishynessRange.x) / squishPool;
             }
 
-            print("d");
             //find the difference between organ quality and target qulity
             if (organBeingRead.quality > currentOrder.targetQuality)
             {
@@ -253,7 +253,6 @@ public class OrderManager : MonoBehaviour
                 netQuality += 1;
             }
 
-            print("e");
             //dividing by number of traits being compared
             organQualities[i] = netQuality / 4;
         }
@@ -262,17 +261,28 @@ public class OrderManager : MonoBehaviour
 
         for(int i = myBody.organCount - 1; i >= 0; --i)
         {
-            print("final i: " + i);
             netQuality += organQualities[i];
         }
 
-        return netQuality / myBody.organCount;
+        if (myBody.organCount > currentOrder.organsNeeded)
+            if (netQuality / myBody.organCount >= 1)
+                return 1;
+            else
+                return netQuality / myBody.organCount;
+        else
+            return netQuality / myBody.organCount;
     }
 
 
     public void orderComplete()
     {
-        print(evaluateOrder());
+        currentOrder.completed = true;
+        currentOrder.solution = myBody.organsInsideMeList;
+        currentOrder.grade = evaluateOrder();
+
+        //add money to wallet
+        //print("payout: " + currentOrder.payout + "grade: " + currentOrder.grade + "balance: " + moneyBox.balance);
+        moneyBox.balance += (int)(currentOrder.payout * currentOrder.grade);
 
     }
 
@@ -282,6 +292,10 @@ public class OrderManager : MonoBehaviour
         if (!myBody)
         {
             myBody = FindObjectOfType<Body>();
+        }
+        if (!moneyBox)
+        {
+            moneyBox = FindObjectOfType<Wallet>();
         }
         nextOrder();
     }

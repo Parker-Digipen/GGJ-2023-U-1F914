@@ -1,4 +1,4 @@
-This line will nto be read, us it for comment and description
+<payout>
 <Name>
 <amount of organs>
 Kidney	-<1-3 pref>
