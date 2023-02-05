@@ -32,6 +32,9 @@ public class SimpleButton : MonoBehaviour
     [Tooltip("is the button currently pressed eg: active")]
     public bool pressed = false;
 
+    public int priceToPress = 0;
+    public bool destroyOnPress = false;
+
     SpriteRenderer mySR;
 
     private void Start()
@@ -93,9 +96,17 @@ public class SimpleButton : MonoBehaviour
             //if mouse is held down
             if (Input.GetMouseButton(0))
             {
+                if(Input.GetMouseButtonDown(0))
+                {
+                    FindObjectOfType<Wallet>().balance -= priceToPress;
+                }
                 //being pressed and setting color
                 pressed = true;
                 mySR.color = clickedColor;
+                if(destroyOnPress)
+                {
+                    Destroy(this);
+                }
             }
             else
             {

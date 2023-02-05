@@ -70,4 +70,18 @@ public class Traits : MonoBehaviour
     --------------------------------------
     */
 
+    public void generateRandom()
+    {
+        myOrgan = (OrganType)Random.Range(0, 5);
+        myFunk = (Funk)Random.Range(0, 8);
+        myMaterial = (Traits.Material)Random.Range(0, 12);
+
+        squish = Random.Range(1, 10);
+        cuteness = Random.Range(1, 10);
+
+        quality = Random.Range(1, 5);
+
+        desctiption = "By the gods, what is this?";
+        //output.name = output.myMaterial.ToString() + " " + output.myOrgan.ToString();
+    }
 }
