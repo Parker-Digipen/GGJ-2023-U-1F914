@@ -72,10 +72,12 @@ public class Shop : MonoBehaviour
     }
     public void restock()
     {
-        for(int i = currentlyAvailable.Count; i >= 0; --i)
+        for(int i = currentlyAvailable.Count - 1; i >= 0; --i)
         {
             Destroy(currentlyAvailable[i]);
+            currentlyAvailable.RemoveAt(i);
         }
+
         generateInventory();
     }
     private void Start()
