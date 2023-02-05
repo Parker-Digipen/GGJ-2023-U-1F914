@@ -70,7 +70,14 @@ public class Shop : MonoBehaviour
             currentlyAvailable.Add(temp);
         }
     }
-
+    public void restock()
+    {
+        for(int i = currentlyAvailable.Count; i >= 0; --i)
+        {
+            Destroy(currentlyAvailable[i]);
+        }
+        generateInventory();
+    }
     private void Start()
     {
         generateInventory();
